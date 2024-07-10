@@ -10,7 +10,6 @@ import com.mtz.four.wheeler.entity.FourWheeler;
 import com.mtz.four.wheeler.service.VehicleService;
 
 @RestController
-@CrossOrigin("*")
 public class VehicleController {
 	
 	@Autowired

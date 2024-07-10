@@ -25,4 +25,22 @@ public class LoginService {
 		return loginRepo.findAll();
 	}
 
+
+	public String deleteUser(String userName) {
+	
+		boolean isDeleted = false;
+		try {
+			LoginUser loginUser = loginRepo.findById(userName).get();
+			if(loginUser != null) {
+				loginRepo.deleteById(userName);
+				isDeleted = true;	
+			}
+				
+		}catch(Exception e) {
+			isDeleted = false;	
+		}
+		if(isDeleted == true) return "Successfully Deleted User.."+userName;
+		return "user Not found..."+userName;
+	}
+
 }
